@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,fetch,Array.prototype.includes"></script>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@5.0.0" />
+    <link rel="stylesheet" href="ajax.css" />
+</head>
+
+<body>
+    <div id="data">
+        
+
+    </div>
+
+    <script src="ajax.js"></script>
+</body>
+
+</html>

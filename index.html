@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etsy Search</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,fetch,Array.prototype.includes"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="global.css"/>
+</head>
+<body>
+    <div class="no-gray">
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1 text-center">
+                    <img src="etsy.png" class="logo" alt="Etsy" />      
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..." id="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button">Search</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+
+                </div>
+            </div>
+        </header>
+        <hr />
+        <nav class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="list-inline list-no-margin">
+                        <li><a href="">Clothing &amp; Accessories</a></li>
+                        <li><a href="">Jewelry</a></li>
+                        <li><a href="">Crafts &amp; Supplies</a></li>
+                        <li><a href="">Tools</a></li>
+                        <li><a href="">Weddings</a></li>
+                        <li><a href="">Entertainment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <hr/>
+    </div>
+
+    <main class="container-fluid">
+        <div class="row">
+            <section id="sideNav" class="col-sm-3">
+
+                <h5>Show results for:</h5>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5><a href="">All categories</a></h5>
+                        <ul class="list-unstyled list-indented">
+                            <li><a href="">Toys & Games</a></li>
+                            <li><a href="">Art & Collectibles</a></li>
+                            <li><a href="">Craft Supplies & Tools</a></li>
+                            <li><a href="">Home & Living</a></li>
+                            <li><a href="">Paper & Party Supplies</a></li>
+                            <li><a href="">Books, Movies & Music</a></li>
+                            <li><a href="">Accessories</a></li>
+                            <li><a href="">Clothing</a></li>
+                            <li><a href="">Electronics & Accessories</a></li>
+                            <li><a href="">Jewelry</a></li>
+                            <li><a href="">Weddings</a></li>
+                            <li><a href="">Bags & Purses</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="searchResults" class="col-sm-9">
+                <p class="search-result-display">Showing <strong>board game</strong> in <strong>vintage</strong>. Search instead for <a href="">vintage board game</a> in all items.</p>
+                <p class="search-result-categories"><a href="">All categories</a> > "board game" (13,331 Results)<span class="pull-right">Sort by: Relevancy</span></p>
+
+                <br />
+
+                <div class="row" id="cards">
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="global.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,fetch,Array.prototype.includes"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/global.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1">
+                    <img class="logo" src="https://img0.etsystatic.com/031/0/5170423/il_340x270.548956212_ilvs.jpg" />
+                </div>
+                <div class="col-sm-4 search">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control"  placeholder="Search for items or shops">
+                            <button type="submit" class="btn btn-default">submit</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-sm-4 col-sm-offset-2">
+                    <ul class="navbar">
+                        <li class="inline"><a href="kv" class="under">Sell on Etsy</a></li>
+                        <li class="inline"><a href="kv" class="under">Register</a></li>
+                        <li class="inline"><button class="btn btn-default" type="submit">Sign in</button>
+                            <li class="inline"><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><br>cart</button></li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-7">
+                    <ul class="navbar">
+                        <li class="inline"><a href="kv" class="under">Clothing &amp; Accessories</a></li>
+                        <li class="inline"><a href="kv" class="under">Jewelry</a></li>
+                        <li class="inline"><a href="kv" class="under">Craft Supplies &amp; Tools</a></li>
+                        <li class="inline"><a href="kv" class="under">Weddings</a></li>
+                        <li class="inline"><a href="kv" class="under">Entertainment</a></li>
+                        <li class="inline"><a href="kv" class="under">Home &amp; Living</a></li>
+                        <li class="inline"><a href="kv" class="under">Kids &amp; Baby</a></li>
+                        <li class="inline"><a href="kv" class="under">Vintage</a></li>
+                    </ul>
+                </div>
+            </div>
+
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                Show results for:<br>
+                <div class="sideBox">
+                    <a href="kv" class="allCatagories">All Catagories</a><br>
+                    <ul class="catagories">
+                        <li>Toys &amp; Games</li>
+                        <li>Art &amp; Collectibles</li>
+                        <li>Craft Supplies &amp; Tools</li>
+                        <li>Home &amp; Living</li>
+                        <li>Paper &amp; Party Supplies</li>
+                        <li>Books, Movies &amp; Music</li>
+                        <li>Accessories</li>
+                        <li>Clothing</li>
+                        <li>Electronics &amp; Accessories</li>
+                        <li>Jewelry</li>
+                        <li>Weddings</li>
+                        <li>Bags &amp; Purses</li>
+                    </ul>
+                </div><br> Refine your search:<br>
+                <div class="sideBox">
+                    <b>Shop Location</b><br>
+                    <label><input type="radio" name="optradio">Anywhere</label><br>
+                    <label><input type="radio" name="optradio">United States</label><br>
+                    <a href="kv" class="custom">Choose a custom location</a><br>
+                    <hr>
+                    <b>Item Type</b><br>
+                    <label><input type="radio" name="optradio">All items</label><br>
+                    <label><input type="radio" name="optradio">Handmade</label><br>
+                    <label><input type="radio" name="optradio">Vintage</label><br>
+                    <hr>
+                    <b>Price ($)</b><br>
+                    <label><input type="radio" name="optradio">Any price</label><br>
+                    <label><input type="radio" name="optradio">Under $25</label><br>
+                    <label><input type="radio" name="optradio">$25 to $50</label><br>
+                    <label><input type="radio" name="optradio">$50 to $100</label><br>
+                    <label><input type="radio" name="optradio">Over $100</label><br>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputName2" placeholder="Low">
+                            <label for="to">to</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="High">
+                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+                        </div>
+                    </form>
+                    <hr>
+                    <b>Filter by color</b><br>
+                    <div class="color red"></div>
+                    <div class="color orange"></div>
+                    <div class="color yellow"></div>
+                    <div class="color green"></div>
+                    <div class="color blue"></div>
+                    <div class="color purple"></div>
+                    <div class="color black"></div>
+                    <div class="color white"></div>
+                    <hr>
+                    <b>Ordering options</b><br>
+                    <label><input type="checkbox" value="option1">Accepts Etsy gift cards</label>
+                    <label><input type="checkbox" value="option2">Customizable</label>
+                    <hr>
+                    <b>Ship to</b><br>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> United States <span class="caret"></span></button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-4"><b>Did you mean the shop <a href="kv" class= "boardgames">boardgames?</a></b><br>
+                    <a href="kv" class="allCata">All categories</a> <b>> “board games”</b> (13,395 Results)</div>
+                <!--<div class="col-sm-4 col-sm-offset-4">Sort by:
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Relevancy
+                        <span class="caret"></span>
+                        </button>-->
+            </div>
+             <div class="row card" id="app">
+             <div class="col-sm-9">
+            </div>
+           
+           
+                
+                </div>   
+                        
+
+                    </div>
+            </div>
+            </div>-->
+            
+                
+
+                
+
+                
+            
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <script src="js/global.js"></script>
+</body>
+
+</html>

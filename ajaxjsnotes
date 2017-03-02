@@ -1,0 +1,63 @@
+var users = [];
+var comments = [];
+
+getUsers();
+
+function getUsers() {
+    fetch('http://e702b724.ngrok.io/api/v1/users')
+        .then(response => response.json())
+        .then(data => {
+            users = data;
+            getComments();
+        });
+}
+
+function getComments() {
+    fetch('http://e702b724.ngrok.io/api/v1/comments')
+        .then(response => response.json())
+        .then(data => {
+            comments = data;
+            renderUserCards();
+        });
+}
+
+function renderUserCards() {
+    users.forEach(function(user) {
+
+        var userComments = comments.filter(function(comment) {
+            return comment.user_id === user.id;
+        });
+
+        createUserCard(user, userComments);
+
+    })
+}
+
+function createUserCard(user, comments) {
+    
+    var commentsHTML = comments.map(function(comment) {
+        return `<div class="comment">
+            <span class="words">${comment.comment}</span>
+            <span class="date">${comment.created_at}</span>
+        </div>`;
+    });
+    commentsHTML = commentsHTML.join('');
+
+    console.log(commentsHTML);
+
+    var card = `<div class="user">
+        <div class="profile" style="background: ${user.color};">
+
+            <img src="${user.avatar}" alt="${user.firstName}" />
+            <p>${user.firstName} ${user.lastName}</p>
+
+        </div>
+        <div class="comments">
+
+            ${commentsHTML}
+
+        </div>
+    </div>`;
+
+    document.querySelector('#data').innerHTML += card;
+}
