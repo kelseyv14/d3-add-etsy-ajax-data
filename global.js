@@ -8,21 +8,56 @@
 // }
 
 
-var searchResults= {};
-getUsers();
-function getUsers() {
-    fetch('https://thinksaydo.com/tiyproxy.php?https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop')
+document.querySelector('#searchTerm').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        searchEtsy();
+    }
+});
+
+
+document.querySelector('#searchButton').addEventListener('click', searchEtsy);
+
+searchEtsy();
+
+
+function searchEtsy() {
+
+    var searchTerm = document.querySelector('#searchTerm').value;
+    
+    }
+
+    
+    document.querySelector('#cards').innerHTML = '<h3 class="text-center">Search Etsy and returning from outer space...</h3>';
+
+  
+    if (searchTerm !== '') {
+        
+        fetch('https://thinksaydo.com/tiyproxy.php?https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop')
+
+       
         .then(response => response.json())
-        .then(data => {
-            searchResults = data;
-            resultCards();
+
+        
+        .then(loopThroughSearchResults)
+    }
+
+
+
+function loopThroughSearchResults(data) {
+   
+    document.querySelector('#cards').innerHTML = '';
+
+    if (data.results.length > 0) {
+        data.results.forEach(function(item) {
+            createSearchResultCard(item);
         });
-}
+    }
 
-
-
-function resultCards() {
-    searchResults.results.forEach(createSearchResultCard)
+    
+    else {
+        document.querySelector('#cards').innerHTML = '<h3 class="text-center">:(</h3>';
+    }
+    
 }
 
 
@@ -32,7 +67,7 @@ function createSearchResultCard(data) {
         <div class="card">
             <img src="${data.Images[0].url_170x135}"/>
             <div class="card-caption">
-                <div>${data.title.slice(0,50)}...</div>
+                <div>${data.title.slice(0,20)}...</div>
                 <div>
                     <span class="text-muted">${data.Shop.shop_name}</span>
                     <span class="text-success pull-right">${data.price}</span>
@@ -40,6 +75,7 @@ function createSearchResultCard(data) {
             </div>
         </div>
     </div>`;
+
 
     document.querySelector('#cards').innerHTML += card;
 }
